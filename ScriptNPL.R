@@ -142,11 +142,11 @@ ejemplo_matriz <-
 #matriz <- crear_matriz(amazon_df)
 
 smp_size <- floor(0.7 * nrow(amazon_df))
-set.seed(2000)
-train_index <- sample(seq_len(nrow(amazon_df)), size = smp_size)
+set.seed(2001)
+trainI <- sample(seq_len(nrow(amazon_df)), size = smp_size)
 
-train <- mdisp_df_known[train_index, ]
-test <- mdisp_df_known[-train_index, ]
+train <- mdisp_df_known[trainI, ]
+test <- mdisp_df_known[-trainI, ]
 
 ejemplo_modelo <- naive_bayes(formula = overall ~ .,  data = train)
 
